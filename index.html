@@ -15,6 +15,22 @@
   <p>표준디자인을 고르고 내용만 넣으면, 같은 스타일의 결과물이 바로 나옵니다</p>
 </header>
 
+<div class="app-shell">
+  <aside class="sidebar" aria-label="주요 메뉴">
+    <div class="sidebar-title">MENU</div>
+    <button class="sidebar-menu active" type="button" data-app-view="creator" aria-current="page">
+      <span aria-hidden="true">✦</span>
+      <span>제작하기</span>
+    </button>
+    <button class="sidebar-menu" type="button" data-app-view="guide">
+      <span aria-hidden="true">▦</span>
+      <span>디자인 가이드</span>
+    </button>
+  </aside>
+
+  <div class="workspace">
+    <section data-app-view-panel="creator" id="creatorView">
+
 <!-- 단계 표시줄 -->
 <nav class="steps" id="stepBar">
   <button class="step active" data-step="1">1. 종류 선택</button>
@@ -142,6 +158,82 @@
     <div id="resultFrame"></div>
   </section>
 </main>
+    </section>
+
+    <section class="design-guide-screen hidden" data-app-view-panel="guide" id="designGuideView" aria-labelledby="designGuideTitle">
+      <div class="guide-page-head">
+        <span class="guide-eyebrow">DESIGN SYSTEM</span>
+        <h2 id="designGuideTitle">디자인 가이드</h2>
+        <p>디자인 AI 스튜디오의 화면과 결과물에 일관되게 적용하는 기본 시각 원칙입니다.</p>
+      </div>
+
+      <section class="guide-section" aria-labelledby="colorGuideTitle">
+        <div class="guide-section-head">
+          <span class="guide-number">01</span>
+          <div>
+            <h3 id="colorGuideTitle">색상 팔레트</h3>
+            <p>신뢰감을 주는 딥 네이비와 선명한 블루를 중심으로 구성합니다.</p>
+          </div>
+        </div>
+        <div class="palette-grid">
+          <article class="palette-card"><span class="color-preview" style="--swatch:#0f172a"></span><strong>Deep Navy</strong><code>#0F172A</code><small>헤더 · 강한 대비</small></article>
+          <article class="palette-card"><span class="color-preview" style="--swatch:#2563eb"></span><strong>Primary Blue</strong><code>#2563EB</code><small>주요 버튼 · 활성 상태</small></article>
+          <article class="palette-card"><span class="color-preview" style="--swatch:#1d4ed8"></span><strong>Blue Dark</strong><code>#1D4ED8</code><small>호버 · 강조</small></article>
+          <article class="palette-card"><span class="color-preview light" style="--swatch:#f1f5f9"></span><strong>Slate 100</strong><code>#F1F5F9</code><small>페이지 배경</small></article>
+          <article class="palette-card"><span class="color-preview light" style="--swatch:#ffffff"></span><strong>White</strong><code>#FFFFFF</code><small>카드 · 입력 영역</small></article>
+          <article class="palette-card"><span class="color-preview" style="--swatch:#64748b"></span><strong>Slate 500</strong><code>#64748B</code><small>보조 텍스트</small></article>
+        </div>
+      </section>
+
+      <section class="guide-section" aria-labelledby="typeGuideTitle">
+        <div class="guide-section-head">
+          <span class="guide-number">02</span>
+          <div>
+            <h3 id="typeGuideTitle">타이포그래피</h3>
+            <p>Pretendard를 기본으로 사용하고, 명확한 크기와 굵기 차이로 정보 위계를 만듭니다.</p>
+          </div>
+        </div>
+        <div class="type-table">
+          <div class="type-row"><div><span>Page title</span><code>26px / 700 / 1.3</code></div><p class="type-page-title">새로운 아이디어를 디자인하세요</p></div>
+          <div class="type-row"><div><span>Section title</span><code>22px / 700 / 1.4</code></div><p class="type-section-title">콘텐츠를 이해하기 쉬운 구조로</p></div>
+          <div class="type-row"><div><span>Body</span><code>15px / 400 / 1.7</code></div><p class="type-body">본문은 충분한 줄 간격을 두어 편안하게 읽히도록 구성합니다.</p></div>
+          <div class="type-row"><div><span>Caption</span><code>13px / 400 / 1.5</code></div><p class="type-caption">설명과 보조 정보는 차분한 회색으로 표현합니다.</p></div>
+        </div>
+      </section>
+
+      <section class="guide-section" aria-labelledby="layoutGuideTitle">
+        <div class="guide-section-head">
+          <span class="guide-number">03</span>
+          <div>
+            <h3 id="layoutGuideTitle">레이아웃 및 간격</h3>
+            <p>8px 단위의 간격 체계와 제한된 콘텐츠 폭으로 안정적인 리듬을 유지합니다.</p>
+          </div>
+        </div>
+        <div class="layout-guide-grid">
+          <div class="layout-demo" aria-label="레이아웃 구조 예시">
+            <div class="layout-demo-header">Header · 28px vertical</div>
+            <div class="layout-demo-body">
+              <div class="layout-demo-sidebar">Sidebar<br>220px</div>
+              <div class="layout-demo-content"><span>Content</span><small>max-width 1060px</small></div>
+            </div>
+          </div>
+          <div class="layout-rules">
+            <article><strong>콘텐츠 폭</strong><span>최대 1060px</span><small>넓은 화면에서도 읽기 좋은 밀도를 유지합니다.</small></article>
+            <article><strong>페이지 여백</strong><span>32px / 20px / 80px</span><small>상단 · 좌우 · 하단 순서로 적용합니다.</small></article>
+            <article><strong>카드 모서리</strong><span>14–18px</span><small>부드럽고 친근한 인상을 유지합니다.</small></article>
+          </div>
+        </div>
+        <div class="spacing-scale" aria-label="간격 체계">
+          <span><i style="--space:8px"></i><b>8</b></span>
+          <span><i style="--space:12px"></i><b>12</b></span>
+          <span><i style="--space:16px"></i><b>16</b></span>
+          <span><i style="--space:24px"></i><b>24</b></span>
+          <span><i style="--space:32px"></i><b>32</b></span>
+        </div>
+      </section>
+    </section>
+  </div>
+</div>
 
 <!-- 실물 미리보기 + 디자인 가이드 모달 -->
 <div class="modal-backdrop hidden" id="guideModal">
@@ -170,6 +262,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <script src="templates.js"></script>
+<script src="guide-navigation.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
